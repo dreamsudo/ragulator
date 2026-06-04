@@ -1,0 +1,38 @@
+# --- Secrets (NEVER commit) ---
+.env
+*.key
+*credentials*.json
+*service-account*.json
+
+# --- Generated data / artifacts ---
+data/
+*.db
+*.faiss
+*.pkl
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Notebook ---
+.ipynb_checkpoints/
+
+# --- OS / editor ---
+.DS_Store
+.vscode/
+.idea/
+
+.env
+.venv/
+data/
+__pycache__/
+*.pyc

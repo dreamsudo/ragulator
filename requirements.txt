@@ -1,0 +1,20 @@
+# Runtime dependencies (pinned to compatible minimums; let pip resolve patches).
+# In Colab, most of these are already present; this file makes a fresh VS Code
+# / venv install one command:  pip install -r requirements.txt
+pydantic>=2.5
+python-dotenv>=1.0
+sqlalchemy>=2.0
+faker>=24.0
+pandas>=2.0
+requests>=2.31
+matplotlib>=3.7
+langchain-core>=0.2
+langchain-community>=0.2
+langchain-google-genai>=1.0
+faiss-cpu>=1.7
+pyyaml>=6.0
+rich>=13.0
+
+# Notebook UI (needed for the Colab/Jupyter widget interface)
+ipywidgets>=8.0
+ipython>=8.0

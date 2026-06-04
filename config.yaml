@@ -1,0 +1,48 @@
+# ============================================================================
+# The RAGulator (Psypher Labs) - configuration
+# ============================================================================
+# Every value here has a safe default in code; this file just makes the common
+# knobs easy to find and change. To apply a value, either:
+#   * edit it here and load via Settings.from_yaml("config.yaml"), or
+#   * set the matching environment variable  CDP_<FIELD_NAME_UPPER>
+#
+# Secrets are NOT configured here. The Google API key is read at runtime from
+# Colab secrets, the GOOGLE_API_KEY environment variable, or a .env file.
+# Never put an API key in this file or commit one to version control.
+# ============================================================================
+
+# --- Google models -----------------------------------------------------------
+gemini_model: "gemini-2.5-flash"
+embedding_model: "models/gemini-embedding-001"
+llm_temperature: 0.1
+llm_max_retries: 3
+
+# --- Access-control model (PoC simulation) -----------------------------------
+# Need-to-know strictness:
+#   loose    -> clearance gap >= 1 over the doc auto-grants need-to-know
+#   moderate -> clearance gap >= 2 auto-grants need-to-know
+#   strict   -> no auto-grant; a topical keyword match is always required
+nkt_mode: "moderate"
+
+# --- Synthetic data ----------------------------------------------------------
+db_filename: "doc_store_poc.db"
+table_name: "documents"
+num_documents: 1000
+
+# --- Policy RAG --------------------------------------------------------------
+policy_rag_k: 3
+
+# --- Input handling ----------------------------------------------------------
+max_input_length: 2048
+
+# --- External API tool (SSRF-guarded) ----------------------------------------
+api_allowed_schemes: ["https"]
+api_request_timeout_s: 20
+# When true, only hosts in api_host_allowlist may be fetched (recommended).
+api_enforce_host_allowlist: false
+api_host_allowlist:
+  - "jsonplaceholder.typicode.com"
+
+# --- Runtime -----------------------------------------------------------------
+data_dir: "./data"
+log_level: "INFO"
