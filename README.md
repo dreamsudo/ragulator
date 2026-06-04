@@ -1,4 +1,4 @@
-# The RAGulator  ◆  *it regulates.*
+# The RAGulator  ◆ 
 
 **A Psypher Labs proof-of-concept.** Layered defence for an LLM-mediated RAG document access-control system.
 
